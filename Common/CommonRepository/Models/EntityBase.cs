@@ -8,6 +8,15 @@ public abstract class EntityBase
     public string? LastModifiedBy { get; set; }
     public DateTime LastModifiedDate { get; set; }
 
+    protected EntityBase()
+    {
+        Id = Guid.NewGuid();
+        CreatedBy = "DefaultCreator";
+        CreatedDate = DateTime.Now;
+        LastModifiedBy = null;
+        LastModifiedDate = DateTime.Now;
+    }
+
     protected EntityBase(string creatorName)
     {
         Id = Guid.NewGuid();

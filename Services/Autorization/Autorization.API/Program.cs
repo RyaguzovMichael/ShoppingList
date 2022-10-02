@@ -1,3 +1,5 @@
+using Authorization.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
@@ -6,7 +8,7 @@ services.AddMvc();
 services.AddEndpointsApiExplorer();
 
 // Add API services
-
+services.AddInfrastructureDependencies(builder.Configuration);
 
 // Configure CORS Policy and Cookie
 services.AddCors(options => options.AddPolicy("CorsPolicy", policy =>
