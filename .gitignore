@@ -1,4 +1,5 @@
 # Visual Studio work folders
 .vs
+.idea
 obj
 bin
